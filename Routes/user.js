@@ -21,7 +21,14 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  res.send({ data: 'User route' });
+    const {id, name, email, age} = req.body;
+    if (!id || !name || !email || !age) {
+        res.status(400).send({error: 'Complete data is required'});
+    }
+
+    const newUser = { id: users.length + 1, name, email, age };
+    users.push(newUser);
+    res.status(201).send(newUser);
 });
 
 router.put('/', (req, res) => {
