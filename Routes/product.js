@@ -54,3 +54,5 @@ router.delete('/:id', (req, res) => {
       res.status(404).json({ error: 'Product was not found' });
     }
 });
+
+module.exports = router;
