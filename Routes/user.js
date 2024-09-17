@@ -9,6 +9,10 @@ const users = [
     { id: 5, name: 'Ximena Rodiguez', email: 'ximenarodriguez89@gmail.com', age: 32 }
   ];
 
+ router.get('/', (req, res) => {
+    res.status(200).json({ data: users });
+  });
+  
 router.get('/:id', (req, res) => {
     const userId = parseInt(req.params.id, 10);
     const user = users.find(u => u.id === userId); 
