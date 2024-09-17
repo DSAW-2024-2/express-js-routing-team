@@ -35,8 +35,18 @@ router.post('/', (req, res) => {
     res.status(201).send(newUser);
 });
 
-router.put('/', (req, res) => {
-  res.send({ data: 'User route' });
+router.put('/:id', (req, res) => {
+  const user = users.find(u => u.id === parseInt(req.params.id));
+  if (!user) {
+    res.status(404).json({ error: 'User not found' });
+  } 
+
+  const { name, email, age } = req.body;
+    if (name) user.name = name;
+    if (email) user.email = email;
+    if (age) user.age = age;
+
+    res.status(200).json({ message: 'User updated', data: user });
 });
 
 router.delete('/:id', (req, res) => {
