@@ -7,9 +7,11 @@ app.use(express.urlencoded({ extended: true }));
 
 userRoute = require('./Routes/user');
 productRoute = require('./Routes/product');
+orderRoute = require('./Routes/order');
 
 app.use('/users', userRoute);
 app.use('/products', productRoute);
+app.use('/orders', orderRoute);
 
 
 app.listen(port, () => {
