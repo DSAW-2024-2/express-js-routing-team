@@ -13,6 +13,10 @@ app.use('/users', userRoute);
 app.use('/products', productRoute);
 app.use('/orders', orderRoute);
 
+app.use((req, res) => {
+  res.status(404).send('Not found');
+});
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
