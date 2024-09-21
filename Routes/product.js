@@ -3,31 +3,31 @@ const router = express.Router();
 
 const products = [ 
     {
-    id: "1",
+    id: 1,
     name: "burger",
     price: "20",
     category: 2
   },
   {
-    id: "2",
+    id: 2,
     name: "soda",
     price: "10",
     category: 1
   },
   {
-    id: "3",
+    id: 3,
     name: "chips",
     price: "5",
     category: 3
   },
   {
-    id: "4",
+    id: 4,
     name: "fries",
     price: "6",
     category: 3
   },
   {
-    id: "5",
+    id: 5,
     name: "gummies",
     price: "3",
     category: 4
