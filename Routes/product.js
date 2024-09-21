@@ -3,39 +3,34 @@ const router = express.Router();
 
 const products = [ 
     {
-    "id": "1",
-    "userId": "1001",
-    "productId": "501",
-    "quantity": 2,
-    "status": "pending"
+    id: "1",
+    name: "burger",
+    price: "20",
+    category: 2
   },
   {
-    "id": "2",
-    "userId": "1002",
-    "productId": "502",
-    "quantity": 1,
-    "status": "send"
+    id: "2",
+    name: "soda",
+    price: "10",
+    category: 1
   },
   {
-    "id": "3",
-    "userId": "1003",
-    "productId": "503",
-    "quantity": 5,
-    "status": "delivered"
+    id: "3",
+    name: "chips",
+    price: "5",
+    category: 3
   },
   {
-    "id": "4",
-    "userId": "1004",
-    "productId": "504",
-    "quantity": 3,
-    "status": "canceled"
+    id: "4",
+    name: "fries",
+    price: "6",
+    category: 3
   },
   {
-    "id": "5",
-    "userId": "1005",
-    "productId": "505",
-    "quantity": 4,
-    "status": "pending"
+    id: "5",
+    name: "gummies",
+    price: "3",
+    category: 4
   }];
 
 router.get('/', (req, res) => {
