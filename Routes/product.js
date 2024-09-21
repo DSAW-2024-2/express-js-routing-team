@@ -1,7 +1,42 @@
 const express = require('express');
 const router = express.Router();
 
-const products = [];
+const products = [ 
+    {
+    "id": "1",
+    "userId": "1001",
+    "productId": "501",
+    "quantity": 2,
+    "status": "pending"
+  },
+  {
+    "id": "2",
+    "userId": "1002",
+    "productId": "502",
+    "quantity": 1,
+    "status": "send"
+  },
+  {
+    "id": "3",
+    "userId": "1003",
+    "productId": "503",
+    "quantity": 5,
+    "status": "delivered"
+  },
+  {
+    "id": "4",
+    "userId": "1004",
+    "productId": "504",
+    "quantity": 3,
+    "status": "canceled"
+  },
+  {
+    "id": "5",
+    "userId": "1005",
+    "productId": "505",
+    "quantity": 4,
+    "status": "pending"
+  }];
 
 router.get('/', (req, res) => {
     res.status(200).json({ data: products });
@@ -23,10 +58,9 @@ router.post('/', (req, res) => {
     if (!id || !name || !price || !category) {
         res.status(400).send({error: 'Complete data is required'});
     }
-
-    const newProduct = { id: products.length + 1, name, price, category };
-    products.push(newProduct);
-    res.status(201).send(newProduct);
+        const newProduct = { id: products.length + 1, name, price, category };
+        products.push(newProduct);
+        res.status(201).send(newProduct);
 });
 
 router.put('/:id', (req, res) => {
